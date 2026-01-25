@@ -1,0 +1,7 @@
+<Solution>
+  <Configurations>
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Project Path="EyesOfTruth.vcxproj" Id="a68d777c-0baa-45ba-87fb-bf72b525eaef" />
+</Solution>
