@@ -6,4 +6,3 @@ public:
 	virtual ~ObjBase() = 0;
 };
 
-ObjBase::~ObjBase() {}

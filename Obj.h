@@ -11,7 +11,7 @@ enum class TextureID
 class Obj : public ObjBase
 {
 	sf::Vector2f position;
-	sf::Vector2f offset;
+	
 	TextureID texID;
 	sf::IntRect texRect;
 	sf::Vector2f velocity;
@@ -20,7 +20,7 @@ class Obj : public ObjBase
 	bool uniDirectional;
 
 protected:
-
+	sf::Vector2f offset;
 	sf::Vector2f size;
 	bool facingRight;
 

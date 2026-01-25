@@ -140,6 +140,7 @@
     <ClCompile Include="AnimObj.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Obj.cpp" />
+    <ClCompile Include="ObjBase.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AnimObj.h" />

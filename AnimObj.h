@@ -16,9 +16,9 @@ class AnimObj : public Obj
 {
 	void setBase();
 
-	std::unordered_map<AnimName, std::vector<std::vector<sf::IntRect>> frames; // AnimName -> [0]->UniDirectional || rightFacing [1]->LeftFacing -> vector of intrects for the frames in the texture image
-	std::unordered_map < AnimName, std::vector<std::vector<sf::Vector2f>> offsets;
-	std::unordered_map < AnimName, std::vector<std::vector<sf::Vector2f>> sizes;
+	std::unordered_map<AnimName, std::vector<std::vector<sf::IntRect>>> frames; // AnimName -> [0]->UniDirectional || rightFacing [1]->LeftFacing -> vector of intrects for the frames in the texture image
+	std::unordered_map < AnimName, std::vector<std::vector<sf::Vector2f>>> offsets;
+	std::unordered_map < AnimName, std::vector<std::vector<sf::Vector2f>>> sizes;
 	
 	std::unordered_set<AnimName> anims; // anim names
 

@@ -85,6 +85,11 @@ std::unique_ptr<sf::Sprite> Obj::sprite()
 
 void Obj::update(float dt_, sf::RenderWindow& wnd_)
 {
+    // friction
+    if (velocity.x > 0.f) velocity.x -= 0.009f;
+    if (velocity.x < 0.f) velocity.x += 0.009f;
+
+    velocity += acceleration;
     position += velocity * dt_;
-    acceleration += 
+    acceleration = { 0.f,0.f };
 }
