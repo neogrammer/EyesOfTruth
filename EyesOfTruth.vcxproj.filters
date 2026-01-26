@@ -13,6 +13,18 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Resource Files\textures">
+      <UniqueIdentifier>{5f89a2b2-0983-4547-988e-fde6cee1f711}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\fonts">
+      <UniqueIdentifier>{c8c1395e-7b26-4cca-8715-4cdc22049fc7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\sounds">
+      <UniqueIdentifier>{0a881f4b-50c2-4ab9-b13b-8d2065d8ca24}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\datas">
+      <UniqueIdentifier>{071be56f-8f74-47d2-aa33-1df6ca49cf72}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -38,5 +50,32 @@
     <ClInclude Include="AnimObj.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="Assets\textures\duck.png">
+      <Filter>Resource Files\textures</Filter>
+    </Image>
+    <Image Include="Assets\textures\invariant.png">
+      <Filter>Resource Files\textures</Filter>
+    </Image>
+    <Image Include="Assets\textures\logoSm.png">
+      <Filter>Resource Files\textures</Filter>
+    </Image>
+    <Image Include="Assets\textures\Tiles.png">
+      <Filter>Resource Files\textures</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <Media Include="Assets\sounds\pew.mp3">
+      <Filter>Resource Files\sounds</Filter>
+    </Media>
+    <Media Include="Assets\sounds\wow.mp3">
+      <Filter>Resource Files\sounds</Filter>
+    </Media>
+  </ItemGroup>
+  <ItemGroup>
+    <Font Include="Assets\fonts\bubbly.ttf">
+      <Filter>Resource Files\fonts</Filter>
+    </Font>
   </ItemGroup>
 </Project>

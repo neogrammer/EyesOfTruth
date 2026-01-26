@@ -147,6 +147,19 @@
     <ClInclude Include="Obj.h" />
     <ClInclude Include="ObjBase.h" />
   </ItemGroup>
+  <ItemGroup>
+    <Image Include="Assets\textures\duck.png" />
+    <Image Include="Assets\textures\invariant.png" />
+    <Image Include="Assets\textures\logoSm.png" />
+    <Image Include="Assets\textures\Tiles.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Media Include="Assets\sounds\pew.mp3" />
+    <Media Include="Assets\sounds\wow.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <Font Include="Assets\fonts\bubbly.ttf" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
