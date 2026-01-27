@@ -116,7 +116,7 @@ void Obj::move(sf::Vector2f amt_)
 
 bool Obj::isFacingRight()
 {
-    if (uniDirectional) return false;
+    if (uniDirectional) return true;
 
     if (facingRight)
         return true;

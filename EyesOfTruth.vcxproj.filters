@@ -40,6 +40,12 @@
     <Filter Include="Header Files\core\tpl">
       <UniqueIdentifier>{360944c3-308c-46f4-b19d-a4b27c6e989c}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Resource Files\datas\animations">
+      <UniqueIdentifier>{5827a49b-a0e5-4ff7-83b5-22e446f42ea5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\datas\animations\player">
+      <UniqueIdentifier>{0873b204-c7f2-4257-b421-c5245b0dedd2}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -154,5 +160,13 @@
     <None Include="src\core\tpl\ResourceManager.tpl">
       <Filter>Header Files\core\tpl</Filter>
     </None>
+    <None Include="Assets\datas\animations\player\player.anm">
+      <Filter>Resource Files\datas\animations\player</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="Assets\datas\animations\directions.txt">
+      <Filter>Resource Files\datas\animations</Filter>
+    </Text>
   </ItemGroup>
 </Project>

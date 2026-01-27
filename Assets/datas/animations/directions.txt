@@ -1,0 +1,85 @@
+# 1) object position
+posX posY
+
+# 2) startAnim (as int enum value for AnimName)
+startAnimInt
+
+# 3) animCount
+N
+
+# 4) repeat N times, in this exact order:
+
+# 4.1) header line
+animNameInt texIDInt uni(0/1) loopWait(0/1) loopDelayFloat looping(0/1)
+
+# 4.2) frame size
+frameW frameH
+
+# 4.3) start pixel for RIGHT (or dir0)
+startPxlX startPxlY
+
+# 4.4) start pixel for LEFT (or dir1)  (for uni anims, you can just repeat the right start pixel)
+startPxlLeftX startPxlLeftY
+
+# 4.5) atlas params
+startCol pitch numFrames
+
+# 4.6) OFFSETS: expectCount lines of (x y)
+#     expectCount = uni ? numFrames : 2*numFrames
+ox oy
+ox oy
+...
+
+# 4.7) SIZES: expectCount lines of (x y)
+sx sy
+...
+
+# 4.8) DELAYS: expectCount floats
+d
+d
+...
+
+# --------------------------------------------------
+# -- One animation 4 frames unidirectional
+# position
+100 200
+
+# startAnimInt (Idle)
+0
+
+# animCount
+1
+
+# anim header:
+# animNameInt texIDInt uni loopWait loopDelay looping
+0 0 1 0 0.0 1
+
+# frameSize
+32 32
+
+# startPxlRight
+0 0
+
+# startPxlLeft (unused for uni, just repeat)
+0 0
+
+# startCol pitch numFrames
+0 4 4
+
+# OFFSETS (expect = numFrames = 4): x y each
+0 0
+0 0
+0 0
+0 0
+
+# SIZES (4): x y each
+32 32
+32 32
+32 32
+32 32
+
+# DELAYS (4): float each
+0.10
+0.10
+0.10
+0.10

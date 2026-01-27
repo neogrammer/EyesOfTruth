@@ -21,7 +21,7 @@ class Obj : public ObjBase
 	sf::Vector2f acceleration;
 	sf::Vector2f offset;
 	sf::Vector2f size;
-	bool facingRight;
+	bool facingRight{ true };
 	bool uniDirectional;
 	static sf::Texture defaultTex;
 public:

@@ -1,0 +1,48 @@
+# Player.anm
+
+[object]
+position = 320 180
+
+[anim idle]
+texture        = PlayerAtlas
+frame_size     = 130 160
+start_col      = 0
+start_row      = 1
+start_px       = 0 0
+pitch          = 1
+frames         = 3
+uni_directional= true
+
+offsets = (0,0) (0,0) (0,0)
+sizes   = (130,160) (130,160) (130,160)
+delays  = 0.08 0.08 0.08
+
+looping   = true
+loop_wait = false
+loop_delay= 0
+
+[anim run]
+texture         = PlayerAtlas
+frame_size      = 130 160
+start_col       = 3
+start_row       = 2
+start_px        = 0 0
+pitch           = 1
+frames          = 10
+uni_directional = false
+
+# IMPORTANT: Right(10) then Left(10) => 20 total items
+offsets = (0,0) (0,0) (0,0) (0,0) (0,0) (0,0) (0,0) (0,0) (0,0) (0,0)
+          (0,0) (0,0) (0,0) (0,0) (0,0) (0,0) (0,0) (0,0) (0,0) (0,0)
+
+sizes   = (130,160) (130,160) (130,160) (130,160) (130,160)
+          (130,160) (130,160) (130,160) (130,160) (130,160)
+          (130,160) (130,160) (130,160) (130,160) (130,160)
+          (130,160) (130,160) (130,160) (130,160) (130,160)
+
+delays  = 0.06 0.06 0.06 0.06 0.06 0.06 0.06 0.06 0.06 0.06
+          0.06 0.06 0.06 0.06 0.06 0.06 0.06 0.06 0.06 0.06
+
+looping    = true
+loop_wait  = false
+loop_delay = 0
