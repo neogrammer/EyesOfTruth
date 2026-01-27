@@ -2,10 +2,13 @@
 #define PLAYSTATE_H__
 #include <core/GameStateMgr.h>
 #include <core/GameState.h>
+
+class Obj; 
+
 class PlayState : public GameState
 {
 public:
-	
+	Obj* anObject;
 public:
 	PlayState(GameStateMgr* mgr_);
 	virtual ~PlayState();
