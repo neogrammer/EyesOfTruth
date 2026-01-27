@@ -1,0 +1,44 @@
+#ifndef CFG_H__
+#define CFG_H__
+
+#include <SFML/Graphics.hpp>
+#include <core/ResourceManager.h>
+#include <vector>
+#include <variant>
+#include <utility>
+
+
+struct Cfg
+{
+	Cfg() = delete;
+	Cfg(const Cfg&) = delete;
+	Cfg& operator=(const Cfg&) = delete;
+
+
+	//globals 
+	//static sol::state lua; // globals are bad, but we'll use it for simpler implementation
+	static void Initialize();
+
+	// Resource Enums 
+	enum class Textures : int { Count, None };
+	enum class Fonts : int {Font1, Count, None};
+	enum class Music : int { Count, None };
+	enum class Sounds : int { Count, None };
+
+
+	// resource buckets for each type of resource
+	static ResourceManager<sf::Texture, int> textures;
+	static ResourceManager<sf::Music, int> music;
+	static ResourceManager<sf::SoundBuffer, int> sounds;
+	static ResourceManager<sf::Font, int> fonts;
+	
+private:
+    // initalize the resources for the entire game
+    static void initFonts();
+    static void initMusic();
+    static void initSounds();
+    static void initTextures();
+};
+
+
+#endif

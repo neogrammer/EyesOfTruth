@@ -25,6 +25,21 @@
     <Filter Include="Resource Files\datas">
       <UniqueIdentifier>{071be56f-8f74-47d2-aa33-1df6ca49cf72}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\core">
+      <UniqueIdentifier>{7954c5ff-073b-450b-99f7-0db1c0df617a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\game_states">
+      <UniqueIdentifier>{b91ced05-db0f-479f-be38-78572a36f887}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\core">
+      <UniqueIdentifier>{03350625-229c-4223-a636-d33775d19384}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\game_states">
+      <UniqueIdentifier>{321d9252-d9d8-423f-aaf5-926b3737a21c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\core\tpl">
+      <UniqueIdentifier>{360944c3-308c-46f4-b19d-a4b27c6e989c}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -39,6 +54,33 @@
     <ClCompile Include="ObjBase.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\core\Cfg.cpp">
+      <Filter>Source Files\core</Filter>
+    </ClCompile>
+    <ClCompile Include="src\core\Game.cpp">
+      <Filter>Source Files\core</Filter>
+    </ClCompile>
+    <ClCompile Include="src\core\GameState.cpp">
+      <Filter>Source Files\core</Filter>
+    </ClCompile>
+    <ClCompile Include="src\core\GameStateMgr.cpp">
+      <Filter>Source Files\core</Filter>
+    </ClCompile>
+    <ClCompile Include="src\core\globals.cpp">
+      <Filter>Source Files\core</Filter>
+    </ClCompile>
+    <ClCompile Include="src\game_states\PausedState.cpp">
+      <Filter>Source Files\game_states</Filter>
+    </ClCompile>
+    <ClCompile Include="src\game_states\PlayState.cpp">
+      <Filter>Source Files\game_states</Filter>
+    </ClCompile>
+    <ClCompile Include="src\game_states\SplashState..cpp">
+      <Filter>Source Files\game_states</Filter>
+    </ClCompile>
+    <ClCompile Include="src\game_states\TitleState.cpp">
+      <Filter>Source Files\game_states</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ObjBase.h">
@@ -49,6 +91,36 @@
     </ClInclude>
     <ClInclude Include="AnimObj.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\core\Cfg.h">
+      <Filter>Header Files\core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\core\Game.h">
+      <Filter>Header Files\core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\core\GameState.h">
+      <Filter>Header Files\core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\core\GameStateMgr.h">
+      <Filter>Header Files\core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\core\globals.h">
+      <Filter>Header Files\core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\core\ResourceManager.h">
+      <Filter>Header Files\core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\game_states\PausedState.h">
+      <Filter>Header Files\game_states</Filter>
+    </ClInclude>
+    <ClInclude Include="src\game_states\PlayState.h">
+      <Filter>Header Files\game_states</Filter>
+    </ClInclude>
+    <ClInclude Include="src\game_states\SplashState.h">
+      <Filter>Header Files\game_states</Filter>
+    </ClInclude>
+    <ClInclude Include="src\game_states\TitleState.h">
+      <Filter>Header Files\game_states</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -77,5 +149,10 @@
     <Font Include="Assets\fonts\bubbly.ttf">
       <Filter>Resource Files\fonts</Filter>
     </Font>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="src\core\tpl\ResourceManager.tpl">
+      <Filter>Header Files\core\tpl</Filter>
+    </None>
   </ItemGroup>
 </Project>

@@ -1,19 +1,19 @@
 #include <SFML/Graphics.hpp>
-#include "AnimObj.h"
-
-
+#include "core/Game.h"
+#include "core/Cfg.h"
+#include "core/globals.h"
 
 int main()
 {
-	sf::ContextSettings settings;
-	settings.antiAliasingLevel = 8;
-	sf::RenderWindow wnd{ sf::VideoMode({640U, 480U}, 32U), "EyesOfTruth", sf::Style::None, sf::State::Windowed, settings };
+	//sf::ContextSettings settings;
+	//settings.antiAliasingLevel = 8;
+	//sf::RenderWindow wnd{ sf::VideoMode({640U, 480U}, 32U), "EyesOfTruth", sf::Style::None, sf::State::Windowed, settings };
 
 	// TESTING ANIMOBJ class
-	Obj* anObject = nullptr;
+	//Obj* anObject = nullptr;
 
 
-	anObject = new AnimObj(TextureID::Default, { {0,0},{109,192} }, true, { 300.f,200.f }, { 109.f,192.f }, { 0.f,0.f });
+	/*anObject = new AnimObj(TextureID::Default, { {0,0},{109,192} }, true, { 300.f,200.f }, { 109.f,192.f }, { 0.f,0.f });
 	auto& o = *dynamic_cast<AnimObj*>(anObject);
 	std::vector<sf::IntRect> rects;
 	std::vector<sf::Vector2f> offsets;
@@ -68,9 +68,13 @@ int main()
 
 
 		wnd.clear(sf::Color(47,147,247,255));
-		wnd.draw(*anObject->sprite());
+		wnd.draw(*o.sprite());
 		wnd.display();
-	}
+	}*/
+	Cfg::Initialize();
+
+	Game game;
+	game.run();
 
 	return 0;
 
