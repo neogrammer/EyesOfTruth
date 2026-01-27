@@ -8,9 +8,7 @@ PlayState::PlayState(GameStateMgr* mgr_)
 	: GameState(mgr_)
 {
 
-	anObject = nullptr;
-
-
+	// Setting up an animated object
 	anObject = new AnimObj(TextureID::Default, { {0,0},{109,192} }, true, { 300.f,200.f }, { 109.f,192.f }, { 0.f,0.f });
 
 	auto& o = *dynamic_cast<AnimObj*>(anObject);
@@ -36,6 +34,7 @@ PlayState::PlayState(GameStateMgr* mgr_)
 		}
 	o.loadAnimation(AnimName::Idle, TextureID::Default, rects, offsets, sizes, delays, true, false, 0.f, true, true);
 
+	//------------ END OF Animated Object Setup --------------------------------
 }
 
 PlayState::~PlayState()
