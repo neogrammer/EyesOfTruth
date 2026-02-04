@@ -8,7 +8,7 @@ void Obj::setRect(sf::IntRect rect_)
     texRect = rect_;
 }
 
-void Obj::setID(TextureID texID_)
+void Obj::setID(Cfg::Textures texID_)
 {
     texID = texID_;
 }
@@ -39,7 +39,7 @@ void Obj::setAccleration(sf::Vector2f acceleration_)
 }
 
 Obj::Obj()
-    : texID{ TextureID::None}
+    : texID{ Cfg::Textures::None}
     , texRect{ sf::IntRect{{0,0},{32,32}} }
     , uniDirectional{ false }
     , position{ 0.f,0.f }
@@ -49,7 +49,7 @@ Obj::Obj()
 {
 }
 
-Obj::Obj(TextureID texID_, sf::IntRect texRect_, bool uniDirectional_, sf::Vector2f position_, sf::Vector2f size_, sf::Vector2f offset_)
+Obj::Obj(Cfg::Textures texID_, sf::IntRect texRect_, bool uniDirectional_, sf::Vector2f position_, sf::Vector2f size_, sf::Vector2f offset_)
     : texID{texID_}
     , texRect{texRect_}
     , uniDirectional{uniDirectional_}
@@ -64,6 +64,25 @@ Obj::~Obj()
 {
 }
 
+Obj::Obj(const Obj& o)
+    : Obj{o.texID, o.texRect, o.uniDirectional, o.position, o.size, o.offset}
+{
+}
+
+Obj& Obj::operator=(const Obj& o)
+{
+    Obj& me = *this;
+    me.texID = o.texID;
+    me.texRect = o.texRect;
+    me.uniDirectional = o.uniDirectional;
+    me.position = o.position;
+    me.size = o.size;
+    me.offset = o.offset;
+    me.facingRight = o.facingRight;
+
+    return me;
+}
+
 sf::Vector2f Obj::getOffset()
 {
     return offset;
@@ -74,7 +93,7 @@ sf::Vector2f Obj::getAcceleration()
     return acceleration;
 }
 
-TextureID Obj::getTexID()
+Cfg::Textures Obj::getTexID()
 {
     return texID;
 }
@@ -134,13 +153,13 @@ std::unique_ptr<sf::Sprite> Obj::sprite()
 
     std::unique_ptr<sf::Sprite> out;
 
-    if (texID == TextureID::Default)
+    if (texID == Cfg::Textures::Default)
     {
        out = std::make_unique<sf::Sprite>(defaultTex);  //  Get from Cfg::Textures
     }
     else
     {
-        //out = std::make_unique<sf::Sprite>(Cfg::textures.get((int)texID);  //  Get from Cfg::Textures
+        out = std::make_unique<sf::Sprite>(Cfg::textures.get((int)texID));  //  Get from Cfg::Textures
     }
     
     out->setPosition(position - offset);

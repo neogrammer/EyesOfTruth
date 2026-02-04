@@ -1,21 +1,14 @@
 #pragma once
 #include "ObjBase.h"
-
-enum class TextureID
-{
-	
-	Default,
-	Count,
-	None,
-	
-};
+#include <core/Cfg.h>
 
 #include <SFML/Graphics.hpp>
 class Obj : public ObjBase
 {
+protected:
 	sf::Vector2f position;
 	
-	TextureID texID;
+	Cfg::Textures texID;
 	sf::IntRect texRect;
 	sf::Vector2f velocity;
 	sf::Vector2f acceleration;
@@ -31,7 +24,7 @@ public:
 	void setSize(sf::Vector2f);
 	void setOffset(sf::Vector2f);
 	void setRect(sf::IntRect rect_);
-	void setID(TextureID texID_);
+	void setID(Cfg::Textures texID_);
 	void setAccleration(sf::Vector2f offset_);
 	void setPos(sf::Vector2f pos_);
 	void setVel(sf::Vector2f vel_);
@@ -40,8 +33,10 @@ public:
 
 public:
 	Obj();
-	Obj(TextureID texID_, sf::IntRect texRect_, bool uniDirectional_ = false, sf::Vector2f position_ = {0.f,0.f}, sf::Vector2f size_ = {0.f,0.f}, sf::Vector2f offset_ = {0.f,0.f});
+	Obj(Cfg::Textures texID_, sf::IntRect texRect_, bool uniDirectional_ = false, sf::Vector2f position_ = {0.f,0.f}, sf::Vector2f size_ = {0.f,0.f}, sf::Vector2f offset_ = {0.f,0.f});
 	~Obj();
+	Obj(const Obj&);
+	Obj& operator=(const Obj&);
 
 	sf::Vector2f getOffset();
 	sf::Vector2f getAcceleration();
@@ -50,7 +45,7 @@ public:
 	sf::Vector2f getPos();
 	sf::Vector2f getSize();
 	sf::Vector2f getVelocity();
-	TextureID getTexID();
+	Cfg::Textures getTexID();
 
 	std::unique_ptr<sf::Sprite> sprite();
 	virtual void update(float dt_, sf::RenderWindow& wnd_);

@@ -46,6 +46,15 @@
     <Filter Include="Resource Files\datas\animations\player">
       <UniqueIdentifier>{0873b204-c7f2-4257-b421-c5245b0dedd2}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\world">
+      <UniqueIdentifier>{4a3b31da-9282-40ba-8520-82330ee0d6eb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\datas\tilesets">
+      <UniqueIdentifier>{35919901-2a16-4440-a1de-79bb89b90ff4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\datas\tilemaps">
+      <UniqueIdentifier>{bf59ce00-c3f7-4c97-bbc2-edf10f3c7d7f}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -86,6 +95,15 @@
     </ClCompile>
     <ClCompile Include="src\game_states\TitleState.cpp">
       <Filter>Source Files\game_states</Filter>
+    </ClCompile>
+    <ClCompile Include="src\world\Tile.cpp">
+      <Filter>Header Files\world</Filter>
+    </ClCompile>
+    <ClCompile Include="src\world\Tilemap.cpp">
+      <Filter>Header Files\world</Filter>
+    </ClCompile>
+    <ClCompile Include="src\world\Tileset.cpp">
+      <Filter>Header Files\world</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -128,6 +146,15 @@
     <ClInclude Include="src\game_states\TitleState.h">
       <Filter>Header Files\game_states</Filter>
     </ClInclude>
+    <ClInclude Include="src\world\Tile.h">
+      <Filter>Header Files\world</Filter>
+    </ClInclude>
+    <ClInclude Include="src\world\Tilemap.h">
+      <Filter>Header Files\world</Filter>
+    </ClInclude>
+    <ClInclude Include="src\world\Tileset.h">
+      <Filter>Header Files\world</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Image Include="Assets\textures\duck.png">
@@ -162,6 +189,12 @@
     </None>
     <None Include="Assets\datas\animations\player\player.anm">
       <Filter>Resource Files\datas\animations\player</Filter>
+    </None>
+    <None Include="Assets\datas\tilesets\tileset1.tset">
+      <Filter>Resource Files\datas\tilesets</Filter>
+    </None>
+    <None Include="Assets\datas\tilemaps\tilemap1.map">
+      <Filter>Resource Files\datas\tilemaps</Filter>
     </None>
   </ItemGroup>
   <ItemGroup>

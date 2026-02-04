@@ -9,7 +9,7 @@ PlayState::PlayState(GameStateMgr* mgr_)
 {
 
 	// Setting up an animated object
-	anObject = new AnimObj(TextureID::Default, { {0,0},{109,192} }, true, { 300.f,200.f }, { 109.f,192.f }, { 0.f,0.f });
+	anObject = new AnimObj(Cfg::Textures::Default, { {0,0},{109,192} }, true, { 300.f,200.f }, { 109.f,192.f }, { 0.f,0.f });
 
 	auto& o = *dynamic_cast<AnimObj*>(anObject);
 	std::vector<sf::IntRect> rects;
@@ -32,7 +32,8 @@ PlayState::PlayState(GameStateMgr* mgr_)
 			sizes.emplace_back(sf::Vector2f{ 109.f, 192.f });
 			delays.emplace_back(0.13f);
 		}
-	o.loadAnimation(AnimName::Idle, TextureID::Default, rects, offsets, sizes, delays, true, false, 0.f, true, true);
+	o.loadAnimation(AnimName::Idle, Cfg::Textures::Default, rects, offsets, sizes, delays, true, false, 0.f, true, true);
+	tmap = new Tilemap{ {20, 15}, "Assets/datas/tilesets/tileset1.tset", Cfg::Textures::Tileset1, "Assets/datas/tilemaps/tilemap1.map" };
 
 	//------------ END OF Animated Object Setup --------------------------------
 }
@@ -42,6 +43,10 @@ PlayState::~PlayState()
 	if (anObject)
 	{
 		delete anObject;
+	}
+	if (tmap)
+	{
+		delete tmap;
 	}
 }
 
@@ -76,6 +81,7 @@ void PlayState::updateLate()
 
 void PlayState::render()
 {
+	tmap->renderSolids();
 	gWnd.draw(*anObject->sprite());
 }
 

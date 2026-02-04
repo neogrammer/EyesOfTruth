@@ -152,6 +152,9 @@
     <ClCompile Include="src\game_states\PlayState.cpp" />
     <ClCompile Include="src\game_states\SplashState..cpp" />
     <ClCompile Include="src\game_states\TitleState.cpp" />
+    <ClCompile Include="src\world\Tile.cpp" />
+    <ClCompile Include="src\world\Tilemap.cpp" />
+    <ClCompile Include="src\world\Tileset.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AnimObj.h" />
@@ -167,6 +170,9 @@
     <ClInclude Include="src\game_states\PlayState.h" />
     <ClInclude Include="src\game_states\SplashState.h" />
     <ClInclude Include="src\game_states\TitleState.h" />
+    <ClInclude Include="src\world\Tile.h" />
+    <ClInclude Include="src\world\Tilemap.h" />
+    <ClInclude Include="src\world\Tileset.h" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="Assets\textures\duck.png" />
@@ -183,6 +189,8 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\datas\animations\player\player.anm" />
+    <None Include="Assets\datas\tilemaps\tilemap1.map" />
+    <None Include="Assets\datas\tilesets\tileset1.tset" />
     <None Include="src\core\tpl\ResourceManager.tpl" />
   </ItemGroup>
   <ItemGroup>

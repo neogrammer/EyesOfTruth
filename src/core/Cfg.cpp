@@ -25,6 +25,7 @@ void Cfg::initSounds()
 
 void Cfg::initTextures()
 {
+    textures.load((int)Textures::Tileset1, "Assets/textures/Tiles.png");
 }
 
 

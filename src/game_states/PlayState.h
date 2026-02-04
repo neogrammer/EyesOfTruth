@@ -2,6 +2,8 @@
 #define PLAYSTATE_H__
 #include <core/GameStateMgr.h>
 #include <core/GameState.h>
+#include <world/Tilemap.h>
+#include <memory>
 
 class Obj; 
 
@@ -9,6 +11,9 @@ class PlayState : public GameState
 {
 public:
 	Obj* anObject;
+
+	Tilemap* tmap{ nullptr };
+
 public:
 	PlayState(GameStateMgr* mgr_);
 	virtual ~PlayState();

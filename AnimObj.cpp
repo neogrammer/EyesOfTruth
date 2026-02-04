@@ -29,7 +29,7 @@ AnimObj::AnimObj(const std::string& filename)
 	loadAnimations(filename);
 }
 
-void AnimObj::loadAnimation(AnimName nameID_, TextureID texID_, std::vector<sf::IntRect>& rects_, std::vector<sf::Vector2f>& offsets_, std::vector<sf::Vector2f>& sizes_, std::vector<float>& delays_, bool loadFirstValue, bool loopWaits_, float loopDelay_, bool looping_, bool playing_)
+void AnimObj::loadAnimation(AnimName nameID_, Cfg::Textures texID_, std::vector<sf::IntRect>& rects_, std::vector<sf::Vector2f>& offsets_, std::vector<sf::Vector2f>& sizes_, std::vector<float>& delays_, bool loadFirstValue, bool loopWaits_, float loopDelay_, bool looping_, bool playing_)
 {
 	if (anims.contains(nameID_))
 	{
@@ -168,13 +168,13 @@ void AnimObj::loadAnimation(AnimName nameID_, TextureID texID_, std::vector<sf::
 
 }
 
-AnimObj::AnimObj(TextureID texID_, sf::IntRect texRect_, bool uniDirectional_, sf::Vector2f position_, sf::Vector2f size_, sf::Vector2f offset_)
+AnimObj::AnimObj(Cfg::Textures texID_, sf::IntRect texRect_, bool uniDirectional_, sf::Vector2f position_, sf::Vector2f size_, sf::Vector2f offset_)
 	: Obj{texID_, texRect_,uniDirectional_, position_, size_, offset_}
 {
 	
 }
 
-void AnimObj::loadAnimations(std::unordered_map<AnimName, TextureID>& texID_,  std::unordered_set<AnimName>& nameID_,  AnimName startAnim, std::unordered_map<AnimName, sf::Vector2f>& frameSizes_,
+void AnimObj::loadAnimations(std::unordered_map<AnimName, Cfg::Textures>& texID_,  std::unordered_set<AnimName>& nameID_,  AnimName startAnim, std::unordered_map<AnimName, sf::Vector2f>& frameSizes_,
 	std::unordered_map<AnimName, std::vector<sf::Vector2f>>& offsets_, std::unordered_map<AnimName, std::vector<sf::Vector2f>>& sizes_,
 	std::unordered_map<AnimName, std::vector<float>>& delays_, std::unordered_map<AnimName, uint32_t>& startCols_,
 	std::unordered_map<AnimName, sf::Vector2f> startPxls_, std::unordered_map<AnimName, sf::Vector2f> startPxlsLeft_, std::unordered_map<AnimName, uint32_t>& pitches_, std::unordered_map<AnimName, uint32_t>& numFrames_,
@@ -197,7 +197,7 @@ void AnimObj::loadAnimations(std::unordered_map<AnimName, TextureID>& texID_,  s
 		const bool lw = loopWaits_.at(aname);
 		const float ld = loopDelays_.at(aname);
 		const bool lp = loopings_.at(aname);
-		const TextureID tID = texID_.at(aname);
+		const Cfg::Textures tID = texID_.at(aname);
 		texIDs[aname] = tID;
 		loopDelays[aname] = ld;
 		loopWaits[aname] = lw;
@@ -438,7 +438,7 @@ void AnimObj::loadAnimations(const std::string& filename)
 		throw std::runtime_error("AnimObj::loadAnimations: failed to open file: " + filename);
 
 	// Containers required by the monster
-	std::unordered_map<AnimName, TextureID> texID;
+	std::unordered_map<AnimName, Cfg::Textures> texID;
 	std::unordered_set<AnimName> nameID;
 	std::unordered_map<AnimName, sf::Vector2f> frameSizes;
 	std::unordered_map<AnimName, std::vector<sf::Vector2f>> offsets;
@@ -481,7 +481,7 @@ void AnimObj::loadAnimations(const std::string& filename)
 		in >> animNameInt >> texIdInt >> uniInt >> loopWaitInt >> loopDelay >> loopingInt;
 
 		const AnimName aname = static_cast<AnimName>(animNameInt);
-		const TextureID tid = static_cast<TextureID>(texIdInt);
+		const Cfg::Textures tid = static_cast<Cfg::Textures>(texIdInt);
 		const bool uni = (uniInt != 0);
 		const bool lw = (loopWaitInt != 0);
 		const bool lp = (loopingInt != 0);

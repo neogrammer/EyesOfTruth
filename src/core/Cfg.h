@@ -20,7 +20,7 @@ struct Cfg
 	static void Initialize();
 
 	// Resource Enums 
-	enum class Textures : int { Count, None };
+	enum class Textures : int { Tileset1, Default, Count, None };
 	enum class Fonts : int {Font1, Count, None};
 	enum class Music : int { Count, None };
 	enum class Sounds : int { Count, None };
