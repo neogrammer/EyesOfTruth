@@ -33,7 +33,7 @@ PlayState::PlayState(GameStateMgr* mgr_)
 			delays.emplace_back(0.13f);
 		}
 	o.loadAnimation(AnimName::Idle, Cfg::Textures::Default, rects, offsets, sizes, delays, true, false, 0.f, true, true);
-	tmap = new Tilemap{ {20, 15}, "Assets/datas/tilesets/tileset1.tset", Cfg::Textures::Tileset1, "Assets/datas/tilemaps/tilemap1.map" };
+	tmap = new Tilemap{ {80, 15}, "Assets/datas/tilesets/tileset1.tset", Cfg::Textures::Tileset1, "Assets/datas/tilemaps/tilemap1.map" };
 
 	//------------ END OF Animated Object Setup --------------------------------
 }
@@ -65,6 +65,16 @@ void PlayState::processEvent(std::optional<sf::Event>& e_)
 
 void PlayState::input()
 {
+	anObject->setVel({ 0.f, anObject->getVel().y });
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::A))
+	{
+		anObject->setVel({ anObject->getVel().x - 300.f * gTime, anObject->getVel().y });
+	}
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::D))
+	{
+		anObject->setVel({ anObject->getVel().x + 300.f * gTime, anObject->getVel().y });
+	}
+
 }
 
 void PlayState::update()
